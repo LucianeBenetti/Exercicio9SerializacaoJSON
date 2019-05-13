@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
-    
     <context-param>
         <param-name>banco</param-name>
         <param-value>MySQL</param-value>
-    </context-param> 
+    </context-param>
     <context-param>
         <param-name>banco_versao</param-name>
         <param-value>5.3</param-value>
-    </context-param> 
-
-    
+    </context-param>
     <servlet>
         <servlet-name>ServletServicoPessoa</servlet-name>
         <servlet-class>br.senac.controle.ServletServicoPessoa</servlet-class>
         <init-param>
-            <param-name>tipo_dado</param-name>
-            <param-value>JSON</param-value>
-         </init-param>
-         <init-param>
+            <param-name>tipoDeDado</param-name>
+            <param-value>sql</param-value>
+        </init-param>
+        <init-param>
             <param-name>limite_dados</param-name>
             <param-value>10</param-value>
-         </init-param>
-
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletServicoEstoque</servlet-name>
+        <servlet-class>atividade9.controle.ServletServicoEstoque</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletServicoPessoa</servlet-name>
         <url-pattern>/ServletServicoPessoa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletServicoEstoque</servlet-name>
+        <url-pattern>/servletservicoestoque</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
