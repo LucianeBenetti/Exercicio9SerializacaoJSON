@@ -22,8 +22,8 @@ public class MainLeitura {
  
     public static void main (String args[]) throws FileNotFoundException, IOException, ClassNotFoundException{
 
-        File f = new File("meu_objeto_pessoa");
-        FileInputStream fin = new FileInputStream(f);
+//        File f = new File("meu_objeto_pessoa");
+//        FileInputStream fin = new FileInputStream(f);
 //        ObjectInputStream oin = new ObjectInputStream(fin);
 //        ArrayList<Pessoa> p = (ArrayList<Pessoa>) oin.readObject();
 //        System.out.println(p);
@@ -44,8 +44,7 @@ public class MainLeitura {
         System.out.println("Lista JSON: "+ listaFromJSON);
         
         
-    }
-    
+    }    
     
     public static ArrayList<Pessoa> carregaPessoas() throws FileNotFoundException, IOException{
         

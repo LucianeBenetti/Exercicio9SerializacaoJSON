@@ -27,16 +27,17 @@ public class ServletServicoPessoa extends HttpServlet {
         //response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
          //   out.println("<!DOCTYPE html>");
-            String tipoDado = this.getServletConfig().getInitParameter("tipo_dado");
+            String tipoDado = this.getServletConfig().getInitParameter("tipoDeDado");
           //  String limite = this.getServletConfig().getInitParameter("limite_dados");
             
             
          if(tipoDado.equals("JSON")){
              response.setContentType("application/json;charset=UTF-8");
              ArrayList<Pessoa> lista =MainLeitura.carregaPessoas();
+             //System.out.println(lista);
              Gson gson = new GsonBuilder().create();
              String json=gson.toJson(lista);
-            out.println(json);
+             out.println(json);
             
          }else if(tipoDado=="xml"){
              out.println("");

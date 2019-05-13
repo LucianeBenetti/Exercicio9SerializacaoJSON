@@ -13,7 +13,7 @@
         <servlet-class>br.senac.controle.ServletServicoPessoa</servlet-class>
         <init-param>
             <param-name>tipoDeDado</param-name>
-            <param-value>sql</param-value>
+            <param-value>JSON</param-value>
         </init-param>
         <init-param>
             <param-name>limite_dados</param-name>
@@ -23,6 +23,14 @@
     <servlet>
         <servlet-name>ServletServicoEstoque</servlet-name>
         <servlet-class>atividade9.controle.ServletServicoEstoque</servlet-class>
+        <init-param>
+            <param-name>tipoDeDado</param-name>
+            <param-value>JSON</param-value>
+        </init-param>
+        <init-param>
+            <param-name>limite_dados</param-name>
+            <param-value>10</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletServicoPessoa</servlet-name>

@@ -37,7 +37,7 @@ public class EstoqueDao {
                 estoque.setNome(resultado.getString("nome"));
                 estoque.setDescricao(resultado.getString("descricao"));
                 estoque.setValor(resultado.getDouble("valor"));
-                estoque.setDescricao(resultado.getString("email"));
+                estoque.setEmai(resultado.getString("email"));
                 
 
                 listaDeItens.add(estoque);

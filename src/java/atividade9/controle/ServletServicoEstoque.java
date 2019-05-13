@@ -7,6 +7,13 @@ package atividade9.controle;
 
 import atividade9.dao.EstoqueDao;
 import atividade9.entidade.Estoque;
+import atividade9.entidade.LeituraEstoqueJson;
+import br.senac.entidade.Pessoa;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -37,11 +44,20 @@ public class ServletServicoEstoque extends HttpServlet {
            //out.println("<!DOCTYPE html>");
            
            String tipoDeDado = this.getServletConfig().getInitParameter("tipoDeDado");
-           EstoqueDao estoqueDao = new EstoqueDao(); 
-           ArrayList<Estoque> listaDeItens = new ArrayList<Estoque>();           
-           listaDeItens = estoqueDao.listarEstoque();
-           
-           System.out.print(listaDeItens);
+                      
+           if(tipoDeDado.equals("JSON")){
+               
+               response.setContentType("application/json;charset=UTF-8");
+               ArrayList<Estoque> listaDeItens = LeituraEstoqueJson.carregarEstoque();
+               System.out.println(listaDeItens);               
+               
+               Gson gson = new GsonBuilder().create();
+               String listaDeItensEmjson = gson.toJson(listaDeItens);               
+               out.println(listaDeItensEmjson);
+           }
+           else if (tipoDeDado.equals("xml")){
+               System.out.println("Arquivo XML!");
+           }
            
         }
     }
