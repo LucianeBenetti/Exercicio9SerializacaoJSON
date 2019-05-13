@@ -28,7 +28,7 @@ public class EscritaEstoqueJson {
         String listaDeItensEmjson = gson.toJson(listaDeItens);               
         System.out.println(listaDeItensEmjson);
         
-        File arquivoASerCriado = new File("D:\\Users\\80119050\\Desktop\\Tecnólogo_ADS\\2019_1\\webProgramming\\exemplos\\serializacaoServicoJson\\estoqueJson");
+        File arquivoASerCriado = new File("D:\\Users\\80119050\\Desktop\\Tecnólogo_ADS\\2019_1\\webProgramming\\exemplos\\serializacaoServicoJson\\estoqueJson.json");
         FileOutputStream fout = new FileOutputStream(arquivoASerCriado);
         DataOutputStream dout = new DataOutputStream(fout);
         dout.write(listaDeItensEmjson.getBytes());
