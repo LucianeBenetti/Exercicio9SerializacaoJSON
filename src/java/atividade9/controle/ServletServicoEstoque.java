@@ -8,7 +8,6 @@ package atividade9.controle;
 import atividade9.dao.EstoqueDao;
 import atividade9.entidade.Estoque;
 import atividade9.entidade.LeituraEstoqueJson;
-import br.senac.entidade.Pessoa;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
