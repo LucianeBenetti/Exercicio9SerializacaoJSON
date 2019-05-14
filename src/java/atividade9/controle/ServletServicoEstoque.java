@@ -53,10 +53,6 @@ public class ServletServicoEstoque extends HttpServlet {
                Gson gson = new GsonBuilder().create();
                String listaDeItensEmjson = gson.toJson(listaDeItens);               
                out.println(listaDeItensEmjson);
-//                BufferedReader br = new BufferedReader (new FileReader("D:\\Users\\80119050\\Desktop\\Tecnólogo_ADS\\2019_1\\webProgramming\\exemplos\\serializacaoServicoJson\\estoqueJson.json"));
-//                Gson gson = new Gson();
-//                ArrayList<Estoque> listaFromJSON = (ArrayList<Estoque>)gson.fromJson(br,new TypeToken<ArrayList<Estoque>>(){}.getType());
-//                out.println("Lista JSON: "+ listaFromJSON);
 
            }
            else if (tipoDeDado.equals("xml")){
